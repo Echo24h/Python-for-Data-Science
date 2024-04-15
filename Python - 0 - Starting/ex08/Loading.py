@@ -55,3 +55,9 @@ def ft_tqdm(lst: range) -> None:
         print("\r" + bar, end="")
         yield bar
     print()
+
+
+if __name__ == "__main__":
+    for _ in ft_tqdm(range(100)):
+        time.sleep(0.1)
+    # shutil.rmtree("test")
