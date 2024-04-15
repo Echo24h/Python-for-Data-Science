@@ -8,5 +8,6 @@ setup(
     author_email='gborne@student.42.fr',
     description='A sample test package',
     url='https://github.com/Echo24h/Python-for-Data-Science/blob/main/Python%20-%200%20-%20Starting/ex09',
+    license='MIT',
     packages=find_packages(),
 )
