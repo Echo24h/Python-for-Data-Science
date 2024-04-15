@@ -7,6 +7,6 @@ setup(
     author='gborne',
     author_email='gborne@student.42.fr',
     description='A sample test package',
-    url='https://github.com/gborne/ft_package',
+    url='https://github.com/Echo24h/Python-for-Data-Science/blob/main/Python%20-%200%20-%20Starting/ex09',
     packages=find_packages(),
 )
