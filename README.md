@@ -3,7 +3,7 @@ Piscine 42 : introduction a Python pour la Data Science
 
 ## ATTENTION
 
-*A vérifier!*
+*A vérifier avant évaluation!*
 
 ### Python - 0 - STarting :
 

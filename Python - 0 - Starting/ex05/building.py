@@ -51,16 +51,17 @@ def main():
     """
 
     try:
+        text = ""
         if len(sys.argv) == 1 or sys.argv[1] == "None":
 
             try:
-                text = input("Please provide a string: \n")
-            except KeyboardInterrupt:
-                sys.exit(0)
+                text = input("Please provide a string:\n")
+            except EOFError:
+                pass
 
         elif len(sys.argv) > 2:
             raise AssertionError("More than one argument is provided")
-        else:
+        elif len(sys.argv) == 2:
             text = sys.argv[1]
 
         dict = count_chars(text)
