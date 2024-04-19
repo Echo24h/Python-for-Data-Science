@@ -7,5 +7,6 @@
     ],
     "editor.formatOnSave": true,
     "editor.renderWhitespace": "all",
-    "editor.renderControlCharacters": true
+    "editor.renderControlCharacters": true,
+    "files.trimTrailingWhitespace": true,
 }
