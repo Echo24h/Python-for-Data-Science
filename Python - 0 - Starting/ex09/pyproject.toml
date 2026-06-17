@@ -1,0 +1,11 @@
+[project]
+name = "ft_package"
+version = "0.0.1"
+description = "A sample test package"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "gborne"},
+    {email = "gborne@student.42.fr"},
+]
+urls = {Home-page = "https://github.com/Echo24h/ft_package"}

@@ -1,5 +1,14 @@
 import sys
 
+
+def str_is_number(num: str) -> bool:
+    try:
+        int(num)
+        return True
+    except ValueError:
+        return False
+
+
 try:
     if len(sys.argv) != 2:
 
@@ -10,7 +19,7 @@ try:
 
     else:
 
-        if sys.argv[1].isdigit():
+        if str_is_number(sys.argv[1]):
 
             num = int(sys.argv[1])
             if num % 2 == 0:

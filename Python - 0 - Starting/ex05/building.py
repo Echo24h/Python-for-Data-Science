@@ -39,6 +39,7 @@ def main():
 
     """
     Cette fonction est le point d'entrée du programme.
+    (Press Ctrl+D to end input)
 
     Elle compte les caractères par type dans une chaîne de texte donnée
     et affiche le résultat.
@@ -53,11 +54,13 @@ def main():
     try:
         text = ""
         if len(sys.argv) == 1 or sys.argv[1] == "None":
-
             try:
-                text = input("Please provide a string:\n")
+                print("What is the text to count?")
+                text = sys.stdin.read()
             except EOFError:
-                pass
+                raise AssertionError("No input provided")
+            except KeyboardInterrupt:
+                raise AssertionError("No input provided")
 
         elif len(sys.argv) > 2:
             raise AssertionError("More than one argument is provided")

@@ -1,23 +1,7 @@
-import time
-# import shutil
+from os import get_terminal_size
 
 
-def format_time(seconds):
-    """
-    Convert seconds to a human readable format.
-
-    Args:
-        seconds (int): The number of seconds.
-
-    Returns:
-        str: The time in the format MM:SS.
-    """
-    minutes = int(seconds // 60)
-    seconds = int(seconds % 60)
-    return f"{minutes:02}:{seconds:02}"
-
-
-def ft_tqdm(lst: range) -> None:
+def ft_tqdm(lst: range):
     """
     Display a progress bar.
 
@@ -27,30 +11,26 @@ def ft_tqdm(lst: range) -> None:
     Returns:
         None
     """
-    start_time = time.time()
+
     total = len(lst)
     for i, item in enumerate(lst, 1):
-        current_time = time.time()
-        elapsed_time = current_time - start_time
-        remaining_time = elapsed_time / i * (total - i)
-
-        # average_speed = i / elapsed_time
-        # iteration_speed = f"{average_speed:.2f}it/s"
 
         progress = int(i / total * 100)
 
-        if progress < 10:
-            bar = f"  {progress}%|{'█' * progress}{' ' * (100 - progress)}\
-| {i}/{total} [{format_time(elapsed_time)}\
-<{format_time(remaining_time)}]"
-        elif progress < 100:
-            bar = f" {progress}%|{'█' * progress}{' ' * (100 - progress)}\
-| {i}/{total} [{format_time(elapsed_time)}\
-<{format_time(remaining_time)}]"
-        else:
-            bar = f"{progress}%|{'█' * progress}{' ' * (100 - progress)}\
-| {i}/{total} [{format_time(elapsed_time)}\
-<{format_time(remaining_time)}]"
+        width = get_terminal_size().columns
+
+        prefix = f"{progress:3d}%|"
+        suffix = f"| {i}/{total}"
+
+        bar_length = width - len(prefix) - len(suffix) - 1
+        progress_length = int(bar_length * progress / 100)
+
+        bar = (
+            prefix
+            + '█' * progress_length
+            + ' ' * (bar_length - progress_length)
+            + suffix
+            )
 
         print("\r" + bar, end="")
         yield bar
@@ -59,5 +39,5 @@ def ft_tqdm(lst: range) -> None:
 
 if __name__ == "__main__":
     for _ in ft_tqdm(range(100)):
+        from time import time
         time.sleep(0.1)
-    # shutil.rmtree("test")

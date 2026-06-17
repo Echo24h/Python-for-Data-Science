@@ -5,7 +5,8 @@ Un package Python d'exemple pour l'exercice 09.
 ## Build
 
 ```bash
-python setup.py sdist
+pip install build
+python -m build
 ```
 
 ## Installation
@@ -16,6 +17,18 @@ Vous pouvez installer ce package en utilisant pip. Assurez-vous d'avoir Python i
 pip install ./dist/ft_package-0.0.1.tar.gz
 ```
 
+ou
+
+```bash
+pip install ./dist/ft_package-0.0.1-py3-none-any.whl
+```
+
+## Vérification
+
+```bash
+pip show -v ft_package
+```
+
 ## Utilisation
 
 Après l'installation, vous pouvez utiliser ce package dans vos scripts Python comme ceci :
@@ -23,8 +36,8 @@ Après l'installation, vous pouvez utiliser ce package dans vos scripts Python c
 ```python
 from ft_package import count_in_list
 
-print(count_in_list(["toto", "tata", "toto"], "toto")) # sortie : 2
-print(count_in_list(["toto", "tata", "toto"], "tutu")) # sortie : 0
+print(count_in_list(["toto", "tata", "toto"], "toto")) # output: 2
+print(count_in_list(["toto", "tata", "toto"], "tutu")) # output: 0
 ```
 
 ## Suppression
