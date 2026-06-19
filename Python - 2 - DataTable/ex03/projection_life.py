@@ -29,7 +29,11 @@ def draw_compare_life_expectancy_gdp(year: int = 1900):
         plt.title(year)
         plt.xlabel('Gross domestic product')
         plt.ylabel('Life expectancy')
-        plt.show()
+        try:
+            plt.show()
+        except KeyboardInterrupt:
+            print("Plotting interrupted by user.")
+            exit(0)
 
 
 if __name__ == "__main__":

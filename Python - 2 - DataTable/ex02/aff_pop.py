@@ -73,9 +73,12 @@ def draw_compare_countries(country1: str, country2: str):
         plt.xlabel("Year")
         plt.ylabel("Population")
 
-        plt.show()
+        try:
+            plt.show()
+        except KeyboardInterrupt:
+            print("Plotting interrupted by user.")
+            exit(0)
 
 
 if __name__ == "__main__":
-    draw_compare_countries("France", "Belgium")
-    draw_compare_countries("India", "China")
+    draw_compare_countries("Switzerland", "France")

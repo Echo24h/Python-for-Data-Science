@@ -10,7 +10,7 @@ def load(file_path: str) -> pd.DataFrame:
         file_path (str): The path to the CSV file.
 
     Returns:
-        pd.DataFrame: The DataFrame containing the CSV data.
+        pd.DataFrame: The DataFrame containing the CSV data, or None if an error occurs.
     """
     try:
         if not isinstance(file_path, str):
@@ -33,7 +33,7 @@ def load(file_path: str) -> pd.DataFrame:
 
     except Exception as error:
         print(type(error).__name__ + ":", error)
-        exit(1)
+        return None
 
 
 if __name__ == "__main__":

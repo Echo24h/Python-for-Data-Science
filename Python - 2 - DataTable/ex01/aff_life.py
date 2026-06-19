@@ -1,3 +1,5 @@
+from os import error
+
 import matplotlib.pyplot as plt
 from load_csv import load
 
@@ -25,10 +27,14 @@ def draw_country_life(country: str):
         plt.xticks(years[::40])
         plt.title(f"{country} Life expectancy Projections")
         plt.xlabel("Year")
-        plt.ylabel("Life Expectancy")
+        plt.ylabel("Life expectancy")
 
-        plt.show()
+        try:
+            plt.show()
+        except KeyboardInterrupt:
+            print("Plotting interrupted by user.")
+            exit(0)
 
 
 if __name__ == "__main__":
-    draw_country_life("France")
+    draw_country_life("Switzerland")
